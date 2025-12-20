@@ -1,213 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inkscribers | Author Support</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inkscribers | Let The World Judge Your Cover</title>
+  <meta name="description" content="Author support for first-time writers. Expert mentorship, publication-ready preparation, and professional design." />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg: #f5f5f3;
-      --white: #ffffff;
-      --text: #1f2933;
-      --muted: #6b7280;
-      --accent: #2f6f6d;
-      --border: #e5e7eb;
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+    .hero-bg {
+      background-color: #f0fdf4; /* green-50 */
+      background-image: radial-gradient(#bbf7d0 1px, transparent 1px); /* green-200 */
+      background-size: 20px 20px;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    details > summary {
+      list-style: none;
     }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 0 20px;
-    }
-
-    section {
-      padding: 80px 0;
-    }
-
-    h1 {
-      font-size: 42px;
-      margin-bottom: 16px;
-    }
-
-    h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-
-    h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      color: var(--muted);
-      max-width: 700px;
-    }
-
-    /* HERO */
-    .hero {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    .hero p {
-      margin: 20px auto 30px;
-      font-size: 18px;
-    }
-
-    .cta {
-      display: inline-block;
-      padding: 14px 28px;
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 500;
-    }
-
-    /* GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-    }
-
-    .card {
-      background: var(--white);
-      padding: 30px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-    }
-
-    /* PROCESS */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-    }
-
-    .step span {
-      font-weight: bold;
-      color: var(--accent);
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--white);
-      border-top: 1px solid var(--border);
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 14px;
-      color: var(--muted);
+    details > summary::-webkit-details-marker {
+      display: none;
     }
   </style>
 </head>
 
-<body>
+<body class="text-slate-800 antialiased flex flex-col min-h-screen">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <h1>INKSCRIBERS</h1>
-      <p>
-        Author development and publishing support for first-time writers.<br>
-        Structured guidance from idea to a finished book.
-      </p>
-      <a class="cta" href="#">Free Author Consultation</a>
+<!-- NAV -->
+<nav class="fixed top-0 w-full bg-white/90 backdrop-blur border-b border-slate-100 z-50 h-14">
+  <div class="max-w-7xl mx-auto px-6 h-full flex justify-between items-center">
+    <span class="text-xl font-bold text-slate-900 font-serif">Inkscribers</span>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+      <a href="#services" class="hover:text-green-600 transition">Services</a>
+      <a href="#process" class="hover:text-green-600 transition">Process</a>
+      <a href="#packages" class="hover:text-green-600 transition">Packages</a>
+      <a href="#consultation" class="bg-slate-900 text-white px-4 py-1.5 rounded-full text-xs hover:bg-slate-800 transition">Start My Journey</a>
     </div>
-  </section>
+  </div>
+</nav>
 
-  <!-- ABOUT -->
-  <section>
-    <div class="container">
-      <h2>What Inkscribers Does</h2>
-      <p>
-        Inkscribers works with writers who are developing their first book.
-        The focus is on clarity, structure, and proper execution — not motivation,
-        not shortcuts, and not marketing promises.
+<!-- HERO -->
+<section class="hero-bg pt-32 pb-20">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+
+    <div>
+      <span class="inline-block mb-6 px-3 py-1 text-xs font-bold text-green-700 bg-green-50 border border-green-200 rounded-full">
+        A TO Z AUTHOR SUPPORT
+      </span>
+
+      <h1 class="text-5xl font-bold leading-tight mb-6">
+        Let The World <br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-800">
+          Judge Your Cover.
+        </span>
+      </h1>
+
+      <p class="text-lg text-slate-600 max-w-xl mb-8">
+        Professional author support — from idea to publication.  
+        We provide expert mentorship, publication-ready preparation, and professional design.
       </p>
-    </div>
-  </section>
 
-  <!-- SERVICES -->
-  <section>
-    <div class="container">
-      <h2>Support Areas</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Writing Mentorship</h3>
-          <p>Guidance on structure, flow, and development throughout the writing process.</p>
-        </div>
-        <div class="card">
-          <h3>Manuscript Preparation</h3>
-          <p>Formatting and cover setup to prepare the manuscript for publishing.</p>
-        </div>
-        <div class="card">
-          <h3>Publishing Support</h3>
-          <p>ISBN assistance and online publishing support on major platforms.</p>
-        </div>
-        <div class="card">
-          <h3>Author Presence</h3>
-          <p>Author copy and basic website support for a professional identity.</p>
-        </div>
+      <div class="flex gap-4 mb-8">
+        <a href="#consultation" class="bg-slate-900 text-white px-8 py-4 rounded-lg font-semibold hover:bg-slate-800 transition">
+          Start My Journey
+        </a>
+        <a href="#services" class="border border-slate-300 bg-white px-8 py-4 rounded-lg font-semibold hover:bg-green-50 transition">
+          View Services
+        </a>
+      </div>
+
+      <div class="text-sm text-slate-600">
+        • Clear timelines &nbsp;&nbsp; • Fast initiation after confirmation &nbsp;&nbsp; • No waiting queues
       </div>
     </div>
-  </section>
 
-  <!-- PROCESS -->
-  <section>
-    <div class="container">
-      <h2>How It Works</h2>
-      <div class="steps">
-        <div class="step">
-          <span>01</span>
-          <p>Start with a free author consultation.</p>
+    <!-- FORM -->
+    <div id="consultation" class="bg-white p-10 rounded-2xl shadow-2xl border border-slate-100 relative">
+      <div class="absolute -top-4 -right-4 w-20 h-20 bg-green-500 rounded-full opacity-10 blur-xl pointer-events-none"></div>
+      
+      <!-- Content Container -->
+      <div id="form-container">
+          <h3 class="text-2xl font-bold mb-2">Free Author Consultation with Experts</h3>
+          <p class="text-sm text-slate-500 mb-6">Discuss your manuscript and next steps.</p>
+
+          <form name="consultation" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="consultation-form">
+            <!-- Hidden Netlify Fields -->
+            <input type="hidden" name="form-name" value="consultation">
+            <div class="hidden">
+                <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <input required type="text" name="name" placeholder="Your Name *" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition">
+              </div>
+              
+              <div>
+                <input required type="email" name="email" placeholder="Email Address *" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition">
+              </div>
+
+              <div>
+                <input type="tel" name="phone" placeholder="Phone Number (Optional)" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition">
+              </div>
+
+              <div>
+                <textarea required name="message" rows="3" placeholder="Tell us about your book idea... *" class="w-full p-3 bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition resize-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full bg-green-600 hover:bg-green-700 transition text-white py-4 rounded-lg font-bold shadow-lg shadow-green-600/30">
+                Start My Journey
+              </button>
+            </div>
+          </form>
+      </div>
+
+      <!-- Success Message (Hidden by default) -->
+      <div id="success-message" class="hidden text-center py-10">
+          <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+              <i class="fa-solid fa-check"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-2">Request Received</h3>
+          <p class="text-slate-600">Thank you. Your request has been received.</p>
+      </div>
+
+      <!-- Script for AJAX Submission -->
+      <script>
+        document.getElementById('consultation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                document.getElementById('form-container').classList.add('hidden');
+                document.getElementById('success-message').classList.remove('hidden');
+            })
+            .catch((error) => alert('Error submitting form. Please try again.'));
+        });
+      </script>
+    </div>
+
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+      <div class="p-10 border rounded-2xl text-center hover:shadow-xl transition duration-300 hover:border-green-200">
+        <div class="w-16 h-16 mx-auto bg-green-50 rounded-full flex items-center justify-center mb-6 text-green-600">
+           <i class="fa-solid fa-laptop-code text-3xl"></i>
         </div>
-        <div class="step">
-          <span>02</span>
-          <p>Identify the appropriate level of support.</p>
-        </div>
-        <div class="step">
-          <span>03</span>
-          <p>Work through writing, preparation, and publishing.</p>
+        <h3 class="text-xl font-bold mb-3">Author Website</h3>
+         <div class="mt-6">
+            <a href="#consultation" class="inline-block border border-green-600 text-green-600 px-6 py-2 rounded-lg font-bold hover:bg-green-600 hover:text-white transition text-sm">Getting Started</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- CTA -->
-  <section>
-    <div class="container">
-      <h2>Start With a Conversation</h2>
-      <p>
-        If you are working on your first book and want structured guidance,
-        the first step is a consultation.
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" class="py-32 bg-green-50">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+    <div>
+      <h2 class="text-4xl font-bold mb-6">Why Inkscribers</h2>
+      <p class="text-green-700 font-medium mb-4">
+        Most publishers wait for a finished book. We build the author first.
       </p>
-      <br>
-      <a class="cta" href="#">Message Inkscribers</a>
+      <p class="text-slate-600 mb-8 leading-relaxed">
+        We work with writers navigating their first serious manuscript — providing clarity, structure, and direction.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm border border-green-100">
+             <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0">
+               <i class="fa-solid fa-check text-sm"></i>
+             </div>
+             <span class="text-sm font-medium text-slate-700">Direct mentor involvement</span>
+          </div>
+          <div class="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm border border-green-100">
+             <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0">
+               <i class="fa-solid fa-check text-sm"></i>
+             </div>
+             <span class="text-sm font-medium text-slate-700">No automated processes</span>
+          </div>
+          <div class="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm border border-green-100">
+             <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0">
+               <i class="fa-solid fa-check text-sm"></i>
+             </div>
+             <span class="text-sm font-medium text-slate-700">Clear scope & timelines</span>
+          </div>
+          <div class="flex items-center gap-3 bg-white p-4 rounded-lg shadow-sm border border-green-100">
+             <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0">
+               <i class="fa-solid fa-check text-sm"></i>
+             </div>
+             <span class="text-sm font-medium text-slate-700">One-to-one coordination</span>
+          </div>
+      </div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    © Inkscribers. All rights reserved.
-  </footer>
+    <div class="bg-slate-900 rounded-2xl h-96 flex flex-col items-center justify-center text-center p-12 shadow-2xl relative overflow-hidden group">
+      <div class="absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-800 z-0"></div>
+      <i class="fa-solid fa-quote-left text-4xl text-green-500 mb-6 relative z-10 opacity-50"></i>
+      <div class="text-white text-3xl md:text-4xl font-serif italic relative z-10 leading-tight">
+        “Your Draft Deserves <br> a First Edition”
+      </div>
+      <i class="fa-solid fa-quote-right text-4xl text-green-500 mt-6 relative z-10 opacity-50"></i>
+    </div>
+  </div>
+</section>
 
-</body>
-          </html>
+<!-- HOW IT WORKS (PROCESS) -->
+<section id="process" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+             <h2 class="text-4xl font-bold mb-4">How We Work</h2>
+             <p class="text-slate-500">A simplified path from consultation to launch.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-4 gap-8 relative">
+            <!-- Connecting Line (Desktop) -->
+            <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-green-100 -z-10 transform -translate-y-1/2"></div>
+            
+            <!-- Step 1 -->
+            <div class="bg-white p-6 text-center relative">
+                <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4 shadow-lg border-4 border-white">1</div>
+                <h3 class="text-lg font-bold mb-2">Consult</h3>
+                <p class="text-sm text-slate-600">We discuss your vision, word count, and goals to select the right path.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-white p-6 text-center relative">
+                <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4 shadow-lg border-4 border-white">2</div>
+                <h3 class="text-lg font-bold mb-2">Structure</h3>
+                <p class="text-sm text-slate-600">We define the scope, timeline, and deliverables for your project.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-white p-6 text-center relative">
+                <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4 shadow-lg border-4 border-white">3</div>
+                <h3 class="text-lg font-bold mb-2">Create</h3>
+                <p class="text-sm text-slate-600">Execution phase: Writing mentorship, formatting, and design work begins.</p>
+            </div>
+
+             <!-- Step 4 -->
+             <div class="bg-white p-6 text-center relative">
+                <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4 shadow-lg border-4 border-white">4</div>
+                <h3 class="text-lg font-bold mb-2">Launch</h3>
+                <p class="text-sm text-slate-600">Final files delivered. Your book is ready for global distribution.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" class="py-32 bg-green-50">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold mb-6">Choose Your Path</h2>
+    <p class="text-slate-500 mb-16">
+      Select the level of support your manuscript requires.
+    </p>
+
+    <!-- Grid: 3 Packages -->
+    <div class="grid md:grid-cols-3 gap-8 text-left mb-8">
+
+      <!-- 1. Essentials (Combo) -->
+      <div class="p-8 border-2 border-green-600 rounded-2xl flex flex-col shadow-xl bg-white relative transform md:scale-105 z-10">
+        <div class="absolute top-0 right-0 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">POPULAR</div>
+        <div class="mb-6">
+          <h3 class="text-xl font-bold mb-2">The Essentials</h3>
+          <p class="text-xs font-bold text-green-600 uppercase tracking-wide">Publishing Standard</p>
+        </div>
+        <p class="text-sm text-slate-600 mb-8 border-b pb-6">
+          The complete technical preparation required to publish your book.
+        </p>
+        <ul class="space-y-3 mb-8 text-sm text-slate-700 flex-grow">
+            <li class="flex gap-2"><i class="fa-solid fa-check text-green-500 mt-1"></i> <strong>Formatting + Cover Design</strong></li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-green-500 mt-1"></i> ISBN Assistance</li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-green-500 mt-1"></i> Platform Account Setup</li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-green-500 mt-1"></i> Metadata & Keywords</li>
+        </ul>
+        <div class="bg-green-50 p-4 rounded-lg text-center mb-6">
+          <p class="text-sm text-green-700 font-medium">Your book, live and available globally.</p>
+        </div>
+        <a href="#consultation" class="block w-full text-center py-3 bg-green-600 text-white rounded-lg font-bold hover:bg-green-700 transition shadow-lg shadow-green-500/30">Start My Journey</a>
+      </div>
+
+      <!-- 2. Mentorship -->
+      <div class="p-8 border rounded-2xl flex flex-col hover:border-green-300 transition-colors bg-white">
+        <div class="mb-6">
+          <h3 class="text-xl font-bold mb-2">Guided Development</h3>
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-wide">Mentorship</p>
+        </div>
+        <p class="text-sm text-slate-600 mb-8 border-b pb-6">
+          For writers who need structure, editing, and guidance to finish their draft.
+        </p>
+        <ul class="space-y-3 mb-8 text-sm text-slate-700 flex-grow">
+            <li class="flex gap-2"><i class="fa-solid fa-check text-green-500 mt-1"></i> <strong>Everything in Essentials</strong></li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-green-500 mt-1"></i> Plot & Structure Guidance</li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-green-500 mt-1"></i> Guided Writing Sessions</li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-green-500 mt-1"></i> Flow & Tone Editing</li>
+        </ul>
+        <div class="bg-green-50 p-4 rounded-lg text-center mb-6">
+          <p class="text-sm text-green-700 font-medium">A completed, polished manuscript.</p>
+        </div>
+        <a href="#consultation" class="block w-full text-center py-3 border border-green-600 text-green-600 rounded-lg font-bold hover:bg-green-600 hover:text-white transition">Start My Journey</a>
+      </div>
+
+      <!-- 3. Professional Launch -->
+      <div class="p-8 border rounded-2xl flex flex-col hover:border-green-300 transition-colors bg-white">
+        <div class="mb-6">
+          <h3 class="text-xl font-bold mb-2">The Professional Launch</h3>
+          <p class="text-xs font-bold text-slate-400 uppercase tracking-wide">Full Suite</p>
+        </div>
+        <p class="text-sm text-slate-600 mb-8 border-b pb-6">
+          The ultimate package. Mentorship, Publishing, and your Author Brand.
+        </p>
+        <ul class="space-y-3 mb-8 text-sm text-slate-700 flex-grow">
+            <li class="flex gap-2"><i class="fa-solid fa-check text-green-500 mt-1"></i> <strong>Mentorship & Development</strong></li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-green-500 mt-1"></i> Judge-Worthy Cover Design</li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-green-500 mt-1"></i> Professional Author Bio</li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-green-500 mt-1"></i> Dedicated Author Website</li>
+            <li class="flex gap-2"><i class="fa-solid fa-check text-green-500 mt-1"></i> 10 Printed Copies</li>
+        </ul>
+        <div class="bg-green-50 p-4 rounded-lg text-center mb-6">
+          <p class="text-sm text-green-700 font-medium">A complete legacy launch.</p>
+        </div>
+        <a href="#consultation" class="block w-full text-center py-3 border border-green-600 text-green-600 rounded-lg font-bold hover:bg-green-600 hover:text-white transition">Start My Journey</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+            <p class="text-slate-500">Common questions about starting your author journey.</p>
+        </div>
+
+        <div class="space-y-4">
+            <!-- 1. Who is Inkscribers for? -->
+            <details class="group bg-slate-50 rounded-xl p-4 cursor-pointer border border-slate-100 open:bg-green-50 open:border-green-100 transition-all">
+                <summary class="flex justify-between items-center font-bold text-slate-800">
+                    <span>Who is Inkscribers for?</span>
+                    <i class="fa-solid fa-plus text-green-600 group-open:hidden"></i>
+                    <i class="fa-solid fa-minus text-green-600 hidden group-open:block"></i>
+                </summary>
+                <div class="mt-4 text-sm text-slate-600 leading-relaxed pl-1">
+                    Inkscribers is designed for first-time and early-stage authors who are serious about completing and publishing their book with structured guidance.
+                </div>
+            </details>
+
+            <!-- 2. Do you write the book on behalf of the author? -->
+            <details class="group bg-slate-50 rounded-xl p-4 cursor-pointer border border-slate-100 open:bg-green-50 open:border-green-100 transition-all">
+                <summary class="flex justify-between items-center font-bold text-slate-800">
+                    <span>Do you write the book on behalf of the author?</span>
+                    <i class="fa-solid fa-plus text-green-600 group-open:hidden"></i>
+                    <i class="fa-solid fa-minus text-green-600 hidden group-open:block"></i>
+                </su
