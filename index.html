@@ -1,69 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inkscribers | Author Support</title>
+
   <style>
-    body {font-family: Arial, Helvetica, sans-serif; background:#f7f7f7; color:#222; margin:0;}
-    .container {max-width:900px; margin:auto; padding:40px 20px;}
-    h1, h2 {font-weight:600;}
-    h1 {font-size:36px; margin-bottom:10px;}
-    h2 {font-size:24px; margin-top:50px;}
-    p {line-height:1.6;}
-    ul {line-height:1.8;}
-    .hero {text-align:center; padding:60px 20px;}
-    .cta {margin-top:30px; font-weight:bold;}
-    .box {background:#ffffff; padding:25px; margin-top:25px; border-radius:6px;}
-    .footer {text-align:center; font-size:14px; color:#666; margin-top:60px;}
+    :root {
+      --bg: #f5f5f3;
+      --white: #ffffff;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --accent: #2f6f6d;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero p {
+      margin: 20px auto 30px;
+      font-size: 18px;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 14px 28px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    /* PROCESS */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+
+    .step span {
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 14px;
+      color: var(--muted);
+    }
   </style>
 </head>
+
 <body>
 
-  <div class="hero">
-    <h1>INKSCRIBERS</h1>
-    <p>Author development and publishing support for first-time writers.</p>
-    <div class="cta">Free Author Consultation — Message to begin</div>
-  </div>
-
-  <div class="container">
-
-    <div class="box">
-      <h2>What We Do</h2>
-      <p>Inkscribers works with writers who are developing their first book. Our focus is on clarity, structure, and proper execution — from early ideas to published work.</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>INKSCRIBERS</h1>
+      <p>
+        Author development and publishing support for first-time writers.<br>
+        Structured guidance from idea to a finished book.
+      </p>
+      <a class="cta" href="#">Free Author Consultation</a>
     </div>
+  </section>
 
-    <div class="box">
-      <h2>Core Support Areas</h2>
-      <ul>
-        <li>Writing mentorship and book development</li>
-        <li>Manuscript formatting</li>
-        <li>Cover page and back page setup</li>
-        <li>ISBN assistance</li>
-        <li>Online publishing support</li>
-        <li>Author website and copy support</li>
-      </ul>
+  <!-- ABOUT -->
+  <section>
+    <div class="container">
+      <h2>What Inkscribers Does</h2>
+      <p>
+        Inkscribers works with writers who are developing their first book.
+        The focus is on clarity, structure, and proper execution — not motivation,
+        not shortcuts, and not marketing promises.
+      </p>
     </div>
+  </section>
 
-    <div class="box">
+  <!-- SERVICES -->
+  <section>
+    <div class="container">
+      <h2>Support Areas</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Writing Mentorship</h3>
+          <p>Guidance on structure, flow, and development throughout the writing process.</p>
+        </div>
+        <div class="card">
+          <h3>Manuscript Preparation</h3>
+          <p>Formatting and cover setup to prepare the manuscript for publishing.</p>
+        </div>
+        <div class="card">
+          <h3>Publishing Support</h3>
+          <p>ISBN assistance and online publishing support on major platforms.</p>
+        </div>
+        <div class="card">
+          <h3>Author Presence</h3>
+          <p>Author copy and basic website support for a professional identity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section>
+    <div class="container">
       <h2>How It Works</h2>
-      <ul>
-        <li>Start with a free author consultation</li>
-        <li>Identify the appropriate level of support</li>
-        <li>Work through the writing and publishing process step by step</li>
-      </ul>
+      <div class="steps">
+        <div class="step">
+          <span>01</span>
+          <p>Start with a free author consultation.</p>
+        </div>
+        <div class="step">
+          <span>02</span>
+          <p>Identify the appropriate level of support.</p>
+        </div>
+        <div class="step">
+          <span>03</span>
+          <p>Work through writing, preparation, and publishing.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="box">
-      <h2>Contact</h2>
-      <p>To begin, message us for a free author consultation.</p>
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <h2>Start With a Conversation</h2>
+      <p>
+        If you are working on your first book and want structured guidance,
+        the first step is a consultation.
+      </p>
+      <br>
+      <a class="cta" href="#">Message Inkscribers</a>
     </div>
+  </section>
 
-    <div class="footer">
-      © Inkscribers. All rights reserved.
-    </div>
-
-  </div>
+  <!-- FOOTER -->
+  <footer>
+    © Inkscribers. All rights reserved.
+  </footer>
 
 </body>
-  </html>
+          </html>
