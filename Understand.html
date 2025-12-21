@@ -177,37 +177,100 @@
     </div>
 </main>
 
-<!-- FOOTER (Consistent with index.html) -->
-<footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800 mt-auto">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 text-center md:text-left">
-        
-        <!-- Brand Info -->
-        <div>
-            <span class="font-serif text-2xl font-bold text-white tracking-tight block mb-2">Inkscribers</span>
-            <p class="text-sm text-slate-500 mb-2 font-medium">Your Vision Deserves A First Edition.</p>
-            <p class="text-xs text-slate-500 max-w-xs mx-auto md:mx-0 leading-relaxed">
-                We are the bridge between your raw manuscript and a global audience. We don't just format words; we structure legacies.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inkscribers Footer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for the icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@700&display=swap');
+        .font-serif {
+            font-family: 'Source Serif Pro', serif;
+        }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 min-h-screen flex flex-col justify-end">
+
+    <!-- The code starts here -->
+    <footer class="bg-slate-900 py-8 border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Main Layout: 3 Columns on desktop -->
+        <div class="grid grid-cols-1 md:grid-cols-3 items-start gap-8">
+          
+          <!-- Column 1: Brand & Tagline Section -->
+          <div class="flex flex-col items-center md:items-start order-1">
+            <!-- Brand: Pure White for Authority -->
+            <span class="font-serif text-xl font-bold text-white tracking-tight mb-1">
+              Inkscribers
+            </span>
+            
+            <!-- Tagline: Muted Indigo (Differentiated from Brand - "Ink" themed) -->
+            <p class="text-xs text-indigo-300 font-medium mb-4 opacity-90">
+              Your Vision Deserves A First Edition.
             </p>
+
+            <!-- Contact Us Pill: Emerald Green (Action Color) -->
+            <details class="relative group">
+              <summary class="list-none cursor-pointer flex items-center gap-2 bg-emerald-700 hover:bg-emerald-600 px-4 py-1.5 rounded-full border border-emerald-500/30 transition-all shadow-lg shadow-emerald-950/40">
+                <div class="flex items-center gap-1.5 text-white">
+                  <i class="fa-regular fa-envelope text-[10px]"></i>
+                  <i class="fa-brands fa-instagram text-[10px]"></i>
+                </div>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-white">Contact Us</span>
+                <i class="fa-solid fa-chevron-down text-[8px] text-emerald-300 transition-transform group-open:rotate-180"></i>
+              </summary>
+
+              <!-- Pop-down Menu -->
+              <div class="absolute left-0 top-full mt-2 w-max min-w-[220px] bg-slate-800 p-4 rounded-xl border border-slate-700 shadow-2xl z-50">
+                <div class="space-y-4">
+                  <!-- Email -->
+                  <div class="flex items-start gap-3">
+                    <div class="w-7 h-7 rounded-lg bg-sky-500/10 flex items-center justify-center shrink-0 border border-sky-500/20">
+                      <i class="fa-regular fa-envelope text-[11px] text-sky-400"></i>
+                    </div>
+                    <div>
+                      <p class="text-[8px] uppercase tracking-widest text-sky-500 font-bold mb-0.5">Email</p>
+                      <p class="text-[11px] text-white select-all font-medium leading-none">inkscribers1@gmail.com</p>
+                    </div>
+                  </div>
+                  
+                  <!-- Instagram -->
+                  <div class="flex items-start gap-3">
+                    <div class="w-7 h-7 rounded-lg bg-pink-500/10 flex items-center justify-center shrink-0 border border-pink-500/20">
+                      <i class="fa-brands fa-instagram text-[11px] text-pink-400"></i>
+                    </div>
+                    <div>
+                      <p class="text-[8px] uppercase tracking-widest text-pink-500 font-bold mb-0.5">Instagram</p>
+                      <a href="https://instagram.com/inkscribers" target="_blank" class="text-[11px] text-white hover:text-pink-300 transition-colors font-medium leading-none">@inkscribers</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- Column 2: Copyright (Centered & Differentiated in Slate-400) -->
+          <div class="flex items-center justify-center order-3 md:order-2 md:pt-2">
+            <div class="text-[10px] text-slate-400 font-medium text-center tracking-wide">
+              &copy; 2025 Inkscribers. All rights reserved.
+            </div>
+          </div>
+
+          <!-- Column 3: Hidden Spacer to keep grid balance -->
+          <div class="hidden md:block order-3"></div>
         </div>
 
-        <!-- Socials -->
-        <div class="flex gap-4">
-            <a href="https://www.instagram.com/inkscribers/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-600 hover:text-white transition text-slate-400">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-        </div>
-
-    </div>
-
-    <!-- Copyright -->
-    <div class="border-t border-slate-800 mt-12 pt-8 text-center text-xs text-slate-600">
-        &copy; 2025 Inkscribers. All rights reserved.
-    </div>
-  </div>
-</footer>
+      </div>
+    </footer>
+    <!-- The code ends here -->
 
 </body>
 </html>
-
-  
