@@ -141,24 +141,28 @@
 document.getElementById('consultation-form').addEventListener('submit', function(e) {
   e.preventDefault();
 
+  const data = new URLSearchParams();
+  data.append('entry.1089523433', document.querySelector('[name="name"]').value);
+  data.append('entry.88888294', document.querySelector('[name="email"]').value);
+  data.append('entry.879859201', document.querySelector('[name="phone"]').value);
+  data.append('entry.1034664134', document.querySelector('[name="message"]').value);
+
   fetch(
     'https://docs.google.com/forms/d/e/1FAIpQLSdHm7TmaamjZ17K_SO1v4LqM8xtR9MucYKVIQI7KiN9qpNQrw/formResponse',
     {
       method: 'POST',
       mode: 'no-cors',
-      body: new URLSearchParams({
-        'entry.1089523433': document.querySelector('[name="name"]').value,
-        'entry.88888294': document.querySelector('[name="email"]').value,
-        'entry.879859201': document.querySelector('[name="phone"]').value,
-        'entry.1034664134': document.querySelector('[name="message"]').value
-      })
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: data.toString()
     }
-  );
-
-  document.getElementById('form-container').classList.add('hidden');
-  document.getElementById('success-message').classList.remove('hidden');
+  ).then(() => {
+    document.getElementById('form-container').classList.add('hidden');
+    document.getElementById('success-message').classList.remove('hidden');
+  });
 });
-                                                              </script>
+</script>
     </div>
 
   </div>
